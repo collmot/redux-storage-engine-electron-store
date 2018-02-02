@@ -4,7 +4,10 @@
   "description": "electron-store engine for redux-storage",
   "main": "build/index.js",
   "scripts": {
-    "test": "make lint test build"
+    "build": "babel src/ --out-dir build/",
+	"lint": "eslint src/",
+    "test": "npm run lint && npm run build",
+    "watch": "babel src/ --out-dir build/ --watch"
   },
   "repository": {
     "type": "git",
