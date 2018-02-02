@@ -1,6 +1,6 @@
 {
   "name": "redux-storage-engine-electron-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "electron-store engine for redux-storage",
   "main": "build/index.js",
   "scripts": {
