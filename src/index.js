@@ -1,4 +1,5 @@
 const Store = require('electron-store')
+const isPlainObj = require('is-plain-obj')
 
 function rejectWithMessage (error) {
   return Promise.reject(error.message)
@@ -12,7 +13,7 @@ export default (options) => {
   options = Object.assign({}, defaults, options)
 
   let store
-  if (options.store.constructor === Object.constructor) {
+  if (isPlainObj(options.store)) {
     store = new Store(options.store)
   } else {
     store = options.store
