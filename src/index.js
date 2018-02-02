@@ -27,7 +27,9 @@ export default (options) => {
         if (key) {
           resolve(store.get(key) || {})
         } else {
-          resolve(store.store)
+          // we cannot simply return store.store from here because it has no
+          // constructor so .hasOwnProperty() would not work on it
+          resolve(Object.assign({}, store.store))
         }
       }).catch(rejectWithMessage)
     },
