@@ -6,6 +6,7 @@
   "scripts": {
     "build": "babel src/ --out-dir build/",
     "lint": "eslint src/",
+    "prepare": "npm run build",
     "test": "npm run lint && npm run build",
     "watch": "babel src/ --out-dir build/ --watch"
   },
